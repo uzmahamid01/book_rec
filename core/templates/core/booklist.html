@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Books - Book-Rec</title>
+        <link rel="stylesheet" href="{% static 'core/style.css' %}">
+    </head>
+    <body>
+        <h1>List of Current Books</h1>
+        <br>
+        {% if books %}
+            <ul>
+            {% for book in books %}
+            <li>
+                <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+                ({{book.author}})
+            </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no books yet.</p>
+        {% endif %}
+        <script src="{% static 'core/index.js' %}"></script>
+    </body>
+</html>

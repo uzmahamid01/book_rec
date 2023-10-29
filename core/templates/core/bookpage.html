@@ -6,18 +6,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Book-Rec</title>
+        <title>{{ book.title }} - Book-Rec</title>
         <link rel="stylesheet" href="{% static 'core/style.css' %}">
     </head>
     <body>
-        <h1>Hello, Book-Rec!</h1>
+        <h1>{{ book.title }}</h1>
         <br>
-        <p>Find a list of books on the books page:</p>
-        <a href="./books">Book Page</a>
-        <br>
-        <br>
-        <br>
-        <p>The current time is {{ time }}</p>
+        <h3>This book was written by {{ book.author }}</h3>
         <script src="{% static 'core/index.js' %}"></script>
     </body>
 </html>
